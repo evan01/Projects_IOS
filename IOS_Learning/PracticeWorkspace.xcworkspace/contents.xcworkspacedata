@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:FoodPin">
+   </FileRef>
+   <FileRef
+      location = "group:FavRestaurants/FavRestaurants.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:StylishTableViewApp/StylishTableViewApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TableViewApp/TableViewApp.xcodeproj">
+   </FileRef>
+</Workspace>
