@@ -105,12 +105,20 @@ class TableVC: UITableViewController {
             (action,indexPath) -> Void in
             
             let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
-            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-            //Instiate the specific view controller we want and present it!!
-            self.presentViewController(activityController, animated: true, completion: nil)
+            
+            //The if statement is to determine if the image loaded or not, it's optional... if let is a way to see if
+            //optional has a value or not
+            if let imageToShare = UIImage(named: self.restaurantImages[indexPath.row]){
+                let activityController = UIActivityViewController (activityItems: [defaultText,imageToShare], applicationActivities: nil)
+                //Instiate the specific view controller we want and present it!!
+                self.presentViewController(activityController, animated: true, completion: nil)
+            }
         })
         
-        //
+        //Change the background colour!
+        shareAction.backgroundColor = UIColor(red: 28.0/255, green: 165.0/255.0, blue: 253.0/255.0, alpha: 1.0)
+        
+       
         let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: {(action,indexPath) -> Void in
             self.restaurantNames.removeAtIndex(indexPath.row)
             self.restaurantTypes.removeAtIndex(indexPath.row)
@@ -121,6 +129,7 @@ class TableVC: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         })
         
+        //A button will be created for each of these actions :)
         return [deleteAction, shareAction]
     
     }
