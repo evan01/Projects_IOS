@@ -58,8 +58,7 @@ class TableVC: UITableViewController {
         return cell
     }
     
-    // MARK: - Table view delegate
-    
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         // Create an option menu as an action sheet
@@ -95,7 +94,7 @@ class TableVC: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
     }
-    
+    */
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         //Social Media button
